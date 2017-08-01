@@ -7,15 +7,29 @@
     "flow-coverage": "flow-coverage-report"
   },
   "dependencies": {
-    "babel-runtime": "6.20.0",
+    "babel-runtime": "^6.20.0",
+    "bootstrap": "^4.0.0-alpha.6",
     "meteor-node-stubs": "0.2.4",
-    "react": "15.6.1",
-    "react-dom": "15.6.1"
+    "react": "^15.6.1",
+    "react-addons-css-transition-group": "^15.6.0",
+    "react-addons-transition-group": "^15.6.0",
+    "react-dom": "^15.6.1",
+    "reactstrap": "^4.8.0"
   },
   "devDependencies": {
+    "autoprefixer": "^7.1.2",
     "flow-bin": "0.51.1",
     "flow-coverage-report": "0.3.0",
     "flow-typed": "2.1.5"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          "last 2 versions"
+        ]
+      }
+    }
   },
   "flow-coverage-report": {
     "includeGlob": [
