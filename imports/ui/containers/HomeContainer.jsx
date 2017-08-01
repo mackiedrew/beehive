@@ -9,7 +9,7 @@ import { bindActionCreators } from 'redux';
 import fakeToggleAction from '../actions/fakeToggle';
 
 // Component to Contain
-import App from '../components/App';
+import Home from '../components/Home';
 
 // Connect the STATE to the props fed into the component.
 export const mapStateToProps = (state: StrictState): MappedStateToProps => {
@@ -29,6 +29,6 @@ export const mapDispatchToProps = (dispatch: Dispatch): MappedDispatchToProps =>
 };
 
 // Create higher-order component which feeds in specified props.
-const AppContainer: StatelessComponent = connect(mapStateToProps, mapDispatchToProps)(App);
+const HomeContainer: StatelessComponent = connect(mapStateToProps, mapDispatchToProps)(Home);
 
-export default AppContainer;
+export default HomeContainer;

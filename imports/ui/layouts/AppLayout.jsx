@@ -2,23 +2,19 @@
 
 // Framework
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
 // Components
 import { Container, Row, Col, Button } from 'reactstrap';
+import HomeContainer from '../containers/HomeContainer';
+import NotFound from '../components/NotFound';
 
 /**
  * Main rendering entry point for the app.
  *
  * @returns {Element} Stateless functional React component.
  */
-const App = (
-  {
-    fakeValue,
-    fakeToggle
-  }: {
-    fakeValue: boolean,
-    fakeToggle: () => void
-  }): StatelessComponent => (
+const AppLayout = ({ children }: { children: StatelessComponent }): StatelessComponent => (
   <Container className="app px-0" fluid>
     <Row className="bg-faded">
       <Col>
@@ -29,9 +25,11 @@ const App = (
     </Row>
     <Row noGutters>
       <Col>
-        <main className="bg-success">
-          <p>Main!</p>
-          <Button onClick={fakeToggle}>{String(fakeValue)}</Button>
+        <main>
+          <Switch>
+            <Route exact path='/' component={HomeContainer}/>
+            <Route path='*' component={NotFound}/>
+          </Switch>
         </main>
       </Col>
     </Row>
@@ -45,4 +43,4 @@ const App = (
   </Container>
 );
 
-export default App;
+export default AppLayout;

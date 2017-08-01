@@ -6,6 +6,9 @@ import type { Element } from 'react';
 // Gloabls
 declare var window: {
   '__REDUX_DEVTOOLS_EXTENSION__': () => Function,
+  location: {
+    pathname: string,
+  },
 };
 
 // Reducers
