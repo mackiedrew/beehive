@@ -1,17 +1,24 @@
 // @flow
 
 // Framework
-import type React, { Element } from 'react';
+import React from 'react';
 
 // Components
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 
 /**
  * Main rendering entry point for the app.
  *
  * @returns {Element} Stateless functional React component.
  */
-const App = (): Element<*> => (
+const App = (
+  {
+    fakeValue,
+    fakeToggle
+  }: {
+    fakeValue: boolean,
+    fakeToggle: () => void
+  }): StatelessComponent => (
   <Container className="app px-0" fluid>
     <Row className="bg-faded">
       <Col>
@@ -24,6 +31,7 @@ const App = (): Element<*> => (
       <Col>
         <main className="bg-success">
           <p>Main!</p>
+          <Button onClick={fakeToggle}>{String(fakeValue)}</Button>
         </main>
       </Col>
     </Row>
