@@ -3,16 +3,31 @@
   "private": false,
   "scripts": {
     "start": "meteor run",
-    "flow": "flow check"
+    "flow": "flow check",
+    "flow-coverage": "flow-coverage-report"
   },
   "dependencies": {
     "babel-runtime": "6.20.0",
     "meteor-node-stubs": "0.2.4",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react": "15.6.1",
+    "react-dom": "15.6.1"
   },
   "devDependencies": {
-    "flow-bin": "^0.51.1",
-    "flow-typed": "^2.1.5"
+    "flow-bin": "0.51.1",
+    "flow-coverage-report": "0.3.0",
+    "flow-typed": "2.1.5"
+  },
+  "flow-coverage-report": {
+    "includeGlob": [
+      "imports/**/*.js",
+      "imports/**/*.jsx"
+    ],
+    "type": [
+      "text",
+      "html",
+      "json"
+    ],
+    "outputDir": ".flow-coverage",
+    "threshold": 40
   }
 }

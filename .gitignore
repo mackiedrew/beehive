@@ -1,1 +1,3 @@
 node_modules/
+.flow-coverage/
+.DS_Store
