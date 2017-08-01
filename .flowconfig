@@ -1,0 +1,27 @@
+[ignore]
+.*/.meteor/local/plugin-cache/ecmascript/.*
+.*/.meteor/local/build/programs/server/app/.*
+.*/.meteor/local/build/programs/server/assets/.*
+.*/.meteor/local/build/programs/server/npm/.*
+.*/.meteor/local/build/programs/server/node_modules/.*
+.*/.meteor/local/build/programs/web.browser/app/.*
+.*/.meteor/local/build/main.js
+.*/.meteor/packages/.*
+.*/node_modules/fbjs/.*
+.*/*.json
+.*/node_modules/codecov.io/node_modules/node-uuid/lib/sha1-browser.js
+.*/node_modules/flow-coverage-report/src/lib/.*
+.*/.flow-coverage/.*
+
+[include]
+
+[libs]
+flow
+
+[options]
+module.name_mapper='^\/\(.*\)$' -> '<PROJECT_ROOT>/\1'
+module.name_mapper='^meteor\/\(.*\):\(.*\)$' -> '<PROJECT_ROOT>/.meteor/local/build/programs/server/packages/\1_\2'
+module.name_mapper='^meteor\/\(.*\)$' -> '<PROJECT_ROOT>/.meteor/local/build/programs/server/packages/\1'
+module.name_mapper='^meteor\/\(.*\)$' -> '<PROJECT_ROOT>/.meteor/local/build/programs/web.browser/packages/\1'
+
+[lints]
