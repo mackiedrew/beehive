@@ -4,7 +4,10 @@
   "scripts": {
     "start": "meteor run",
     "flow": "flow check",
-    "flow-coverage": "flow-coverage-report"
+    "flow:coverage": "flow-coverage-report",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
   },
   "dependencies": {
     "babel-runtime": "^6.25.0",
@@ -24,9 +27,16 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-flowtype": "^2.35.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "eslint-plugin-react": "^7.1.0",
     "flow-bin": "0.51.1",
     "flow-coverage-report": "0.3.0",
     "flow-typed": "2.1.5",
+    "prettier": "^1.5.3",
     "redux-devtools": "3.4.0"
   },
   "postcss": {
@@ -35,6 +45,27 @@
         "browsers": [
           "last 2 versions"
         ]
+      }
+    }
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "plugins": [
+      "prettier",
+      "flowtype",
+      "react"
+    ],
+    "extends": [
+      "prettier",
+      "prettier/flowtype",
+      "prettier/react"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "settings": {
+      "flowtype": {
+        "onlyFilesWithFlowAnnotation": false
       }
     }
   },

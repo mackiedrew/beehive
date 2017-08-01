@@ -1,7 +1,7 @@
 // @flow
 
 // Action Type
-import { FAKE_TOGGLE } from '../actionTypes/ui';
+import { FAKE_TOGGLE } from "../actionTypes/ui";
 
 /**
  * Action creator: creates an action that toggles the fake value.

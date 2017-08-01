@@ -5,7 +5,7 @@ import { FAKE_TOGGLE } from "../actionTypes/ui";
 
 // Initializing state
 export const DEFAULT_STATE: UIState = {
-  fakeValue: false,
+  fakeValue: false
 };
 
 /**
@@ -20,7 +20,7 @@ const UIReducer = (state: UIState = DEFAULT_STATE, action: Action): UIState => {
     case FAKE_TOGGLE:
       const nextState: UIState = {
         ...state,
-        fakeValue: !state.fakeValue,
+        fakeValue: !state.fakeValue
       };
       return nextState;
     default:

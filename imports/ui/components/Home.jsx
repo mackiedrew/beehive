@@ -11,8 +11,7 @@ import { Container, Row, Col, Button } from 'reactstrap';
  *
  * @returns {Element} Stateless functional React component.
  */
-const Home = (
-  {
+const Home = ({
     fakeValue,
     fakeToggle,
   }: {

@@ -8,8 +8,8 @@ import UIReducer from "./ui";
 
 // Key reducers in main store
 const reducers: Reducers = {
-  ui: UIReducer,
-}
+  ui: UIReducer
+};
 
 // Combine reducers
 const rootReducer: Reducer<any, any> = combineReducers(reducers);

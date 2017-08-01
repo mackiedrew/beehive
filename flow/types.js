@@ -1,23 +1,23 @@
 // @flow
 
 // Imported Types
-import type { Element } from 'react';
+import type { Element } from "react";
 
 // Gloabls
 declare var window: {
-  '__REDUX_DEVTOOLS_EXTENSION__': () => Function,
+  "__REDUX_DEVTOOLS_EXTENSION__": () => Function,
   location: {
-    pathname: string,
-  },
+    pathname: string
+  }
 };
 
 // Reducers
 declare type UIState = {
-  fakeValue: boolean,
+  fakeValue: boolean
 };
 
 declare type StrictState = {
-  ui: UIState,
+  ui: UIState
 };
 
 // Redux
@@ -36,9 +36,15 @@ declare type Store = {
   subscribe: (listener: () => void) => () => void,
   replaceReducer: (reducer: Reducer<any, any>) => void
 };
-declare type StoreCreator = (reducer: Reducer<any, any>, initialState: ?State, devTools: any) => Store;
+declare type StoreCreator = (
+  reducer: Reducer<any, any>,
+  initialState: ?State,
+  devTools: any
+) => Store;
 declare type StoreEnhancer = (next: StoreCreator) => StoreCreator;
-declare type ActionCreatorOrObjectOfACs = ActionCreator | { [key: string]: ActionCreator };
+declare type ActionCreatorOrObjectOfACs =
+  | ActionCreator
+  | { [key: string]: ActionCreator };
 declare type Reducers = { [key: string]: Reducer<any, any> };
 declare type MappedStateToProps = { [key: string]: any };
 declare type MappedDispatchToProps = { [key: string]: Function };
