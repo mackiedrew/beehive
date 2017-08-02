@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
-    "flow-bin": "0.51.1",
+    "flow-bin": "0.52.0",
     "flow-coverage-report": "0.3.0",
     "flow-typed": "2.1.5",
     "redux-devtools": "3.4.0"
