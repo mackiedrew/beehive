@@ -1,31 +1,34 @@
 // @flow
 
 // Framework
-import React from 'react';
+import React from "react";
 
 // Components
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col, Button } from "reactstrap";
+import SideBarContainer from "../containers/SideBarContainer";
 
 /**
  * Homepage for the app!
  *
- * @returns {Element} Stateless functional React component.
+ * @returns {StatelessComponent} Stateless functional React component.
  */
 const Home = ({
-    fakeValue,
-    fakeToggle,
-  }: {
-    fakeValue: boolean,
-    fakeToggle: () => void
-  }): StatelessComponent => (
+  fakeValue,
+  fakeToggle
+}: {
+  fakeValue: boolean,
+  fakeToggle: () => void
+}): StatelessComponent =>
   <Container fluid>
     <Row noGutters>
       <Col>
         <h2>Homepage</h2>
-        <Button onClick={ fakeToggle }>State: { String(fakeValue) }</Button>
+        <Button onClick={fakeToggle}>
+          State: {String(fakeValue)}
+        </Button>
+        <SideBarContainer />
       </Col>
     </Row>
-  </Container>
-);
+  </Container>;
 
 export default Home;

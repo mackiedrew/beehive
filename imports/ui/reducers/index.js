@@ -5,10 +5,14 @@ import { combineReducers } from "redux";
 
 // Reducers
 import UIReducer from "./ui";
+import ConfigReducer from "./config";
+import SettingsReducer from "./settings";
 
 // Key reducers in main store
 const reducers: Reducers = {
-  ui: UIReducer
+  ui: UIReducer,
+  config: ConfigReducer,
+  settings: SettingsReducer
 };
 
 // Combine reducers

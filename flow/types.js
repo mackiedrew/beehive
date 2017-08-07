@@ -11,13 +11,29 @@ declare var window: {
   }
 };
 
+// Feilds
+declare type NumberFields = { [key: string]: ?number };
+declare type StringFields = { [key: string]: ?string };
+declare type BooleanFields = { [key: string]: ?boolean };
+declare type Fields = NumberFields | StringFields | BooleanFields;
+
 // Reducers
 declare type UIState = {
   fakeValue: boolean
 };
 
+declare type ConfigState = {
+  tickRate: number
+};
+
+declare type SettingsState = {
+  hiveName: string
+};
+
 declare type StrictState = {
-  ui: UIState
+  ui: UIState,
+  config: ConfigState,
+  settings: SettingsState
 };
 
 // Redux
