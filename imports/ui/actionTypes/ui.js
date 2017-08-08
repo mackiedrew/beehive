@@ -1,3 +1,3 @@
 // @flow
 
-export const FAKE_TOGGLE: string = "UI/FAKE_TOGGLE";
+export const TOGGLE_SIDE_BAR: string = "UI/TOGGLE_SIDE_BAR";

@@ -32,7 +32,8 @@ const FieldRow = ({
   const inputId: string = `${label}-${typeof value}-field-row-input`;
   const titleLabel: string = camelCaseToTitle(label);
   const labelClass: string = visibleLabel ? "" : "sr-only";
-  const onChange = ({ target }) => stateSettingAction(label, target.value);
+  const onChange: Event => void = ({ target: { value } }) =>
+    stateSettingAction(label, value);
   return (
     <FormGroup className="field-row">
       <Label className={labelClass} for={inputId}>
@@ -40,6 +41,7 @@ const FieldRow = ({
       </Label>
       <Input
         type="text"
+        placeholder={titleLabel}
         name={inputId}
         id={inputId}
         onChange={onChange}

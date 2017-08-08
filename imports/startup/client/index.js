@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 // Client Imports
 import AppLayout from "../../ui/layouts/AppLayout";
-import configureStore from "../../ui/store/configureStore";
+import configureStore from "../../ui/configureStore";
 
 // Make redux initial store
 const store = configureStore();

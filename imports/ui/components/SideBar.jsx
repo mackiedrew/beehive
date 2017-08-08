@@ -24,25 +24,27 @@ const SideBar = ({
   settingsSettingAction: ((label: string, value: InputValue) => void) | void,
   configSettingAction: ((label: string, value: InputValue) => void) | void
 }): StatelessComponent =>
-  <Container className="sidebar" fluid>
-    <Row>
-      <Col>
-        <FieldRows
-          heading="Settings"
-          fields={settingsFields}
-          stateSettingAction={settingsSettingAction}
-        />
-      </Col>
-    </Row>
-    <Row>
-      <Col>
-        <FieldRows
-          heading="Configuration"
-          fields={configFields}
-          stateSettingAction={configSettingAction}
-        />
-      </Col>
-    </Row>
-  </Container>;
+  <aside>
+    <Container className="sidebar" fluid>
+      <Row noGutters>
+        <Col>
+          <FieldRows
+            heading="Settings"
+            fields={settingsFields}
+            stateSettingAction={settingsSettingAction}
+          />
+        </Col>
+      </Row>
+      <Row noGutters>
+        <Col>
+          <FieldRows
+            heading="Configuration"
+            fields={configFields}
+            stateSettingAction={configSettingAction}
+          />
+        </Col>
+      </Row>
+    </Container>
+  </aside>;
 
 export default SideBar;

@@ -6,27 +6,34 @@ import React from "react";
 // Components
 import { Container, Row, Col, Button } from "reactstrap";
 import SideBarContainer from "../containers/SideBarContainer";
+import GameContainer from "../containers/GameContainer";
 
 /**
  * Homepage for the app!
  *
+ * @param {Object} props All the properties passed to the React Component.
  * @returns {StatelessComponent} Stateless functional React component.
  */
 const Home = ({
-  fakeValue,
-  fakeToggle
+  toggleSideBar,
+  sideBarOpen
 }: {
-  fakeValue: boolean,
-  fakeToggle: () => void
+  toggleSideBar: () => void,
+  sideBarOpen: boolean
 }): StatelessComponent =>
-  <Container fluid>
-    <Row noGutters>
+  <Container className="px-0" fluid>
+    <Row>
       <Col>
-        <h2>Homepage</h2>
-        <Button onClick={fakeToggle}>
-          State: {String(fakeValue)}
-        </Button>
-        <SideBarContainer />
+        <Button onClick={() => toggleSideBar()}>Toggle Sidebar</Button>
+      </Col>
+    </Row>
+    <Row>
+      {sideBarOpen &&
+        <Col>
+          <SideBarContainer />
+        </Col>}
+      <Col>
+        <GameContainer />
       </Col>
     </Row>
   </Container>;

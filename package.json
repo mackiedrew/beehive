@@ -2,7 +2,7 @@
   "name": "beehive",
   "private": false,
   "scripts": {
-    "start": "meteor run",
+    "start": "MONGO_URL=mongodb://localhost:27017/beehive meteor run",
     "flow": "flow check",
     "flow:coverage": "flow-coverage-report",
     "lint": "eslint .",
@@ -10,8 +10,8 @@
     "lint:check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
   },
   "dependencies": {
-    "babel-runtime": "^6.25.0",
-    "bootstrap": "^4.0.0-alpha.6",
+    "babel-runtime": "6.25.0",
+    "bootstrap": "4.0.0-alpha.6",
     "meteor-node-stubs": "0.2.4",
     "react": "15.6.1",
     "react-addons-css-transition-group": "15.6.0",
@@ -19,24 +19,26 @@
     "react-dom": "15.6.1",
     "react-redux": "5.0.5",
     "react-router-dom": "4.1.2",
-    "react-transition-group": "^2.2.0",
-    "reactstrap": "^4.8.0",
+    "react-transition-group": "2.2.0",
+    "reactstrap": "4.8.0",
     "redux": "3.7.2",
-    "redux-thunk": "^2.2.0",
-    "reselect": "3.0.1"
+    "redux-saga": "0.15.6",
+    "reselect": "3.0.1",
+    "simpl-schema": "^0.3.2",
+    "underscore": "1.8.3"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.2",
-    "babel-eslint": "^7.2.3",
-    "eslint": "^4.3.0",
-    "eslint-config-prettier": "^2.3.0",
-    "eslint-plugin-flowtype": "^2.35.0",
-    "eslint-plugin-prettier": "^2.1.2",
-    "eslint-plugin-react": "^7.1.0",
+    "autoprefixer": "7.1.2",
+    "babel-eslint": "7.2.3",
+    "eslint": "4.3.0",
+    "eslint-config-prettier": "2.3.0",
+    "eslint-plugin-flowtype": "2.35.0",
+    "eslint-plugin-prettier": "2.1.2",
+    "eslint-plugin-react": "7.1.0",
     "flow-bin": "0.51.1",
     "flow-coverage-report": "0.3.0",
     "flow-typed": "2.1.5",
-    "prettier": "^1.5.3",
+    "prettier": "1.5.3",
     "redux-devtools": "3.4.0"
   },
   "postcss": {

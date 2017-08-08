@@ -1,34 +1,39 @@
 // @flow
 
 // Framework
-import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 // Actions to Bind
-import fakeToggleAction from '../actions/fakeToggle';
+import toggleSideBar from "../actionCreators/ui/toggleSideBar";
 
 // Component to Contain
-import Home from '../components/Home';
+import Home from "../components/Home";
 
 // Connect the STATE to the props fed into the component.
 export const mapStateToProps = (state: StrictState): MappedStateToProps => {
   return {
-    fakeValue: state.ui.fakeValue,
+    sideBarOpen: state.ui.sideBarOpen
   };
 };
 
 // Connect ACTIONS to the props fed into the component.
-export const mapDispatchToProps = (dispatch: Dispatch): MappedDispatchToProps => {
+export const mapDispatchToProps = (
+  dispatch: Dispatch
+): MappedDispatchToProps => {
   return bindActionCreators(
     {
-      fakeToggle: fakeToggleAction,
+      toggleSideBar: toggleSideBar
     },
-    dispatch,
+    dispatch
   );
 };
 
 // Create higher-order component which feeds in specified props.
-const HomeContainer: StatelessComponent = connect(mapStateToProps, mapDispatchToProps)(Home);
+const HomeContainer: StatelessComponent = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);
 
 export default HomeContainer;

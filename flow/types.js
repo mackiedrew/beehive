@@ -17,9 +17,15 @@ declare type StringFields = { [key: string]: ?string };
 declare type BooleanFields = { [key: string]: ?boolean };
 declare type Fields = NumberFields | StringFields | BooleanFields;
 
+// Game
+declare type Bee = {
+  name: string,
+  timeCreated: Date
+};
+
 // Reducers
 declare type UIState = {
-  fakeValue: boolean
+  sideBarOpen: boolean
 };
 
 declare type ConfigState = {
@@ -30,10 +36,15 @@ declare type SettingsState = {
   hiveName: string
 };
 
+declare type GameState = {
+  bees: Array<Bee>
+};
+
 declare type StrictState = {
   ui: UIState,
   config: ConfigState,
-  settings: SettingsState
+  settings: SettingsState,
+  game: GameState
 };
 
 // Redux

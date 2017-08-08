@@ -1,20 +1,24 @@
 // @flow
 
 // Framework
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
 
 // Components
-import { Container, Row, Col, Button } from 'reactstrap';
-import HomeContainer from '../containers/HomeContainer';
-import NotFound from '../components/NotFound';
+import { Container, Row, Col, Button } from "reactstrap";
+import HomeContainer from "../containers/HomeContainer";
+import NotFound from "../components/NotFound";
 
 /**
  * Main rendering entry point for the app.
  *
  * @returns {Element} Stateless functional React component.
  */
-const AppLayout = ({ children }: { children: StatelessComponent }): StatelessComponent => (
+const AppLayout = ({
+  children
+}: {
+  children: StatelessComponent
+}): StatelessComponent =>
   <Container className="app px-0" fluid>
     <Row className="bg-faded">
       <Col>
@@ -27,8 +31,8 @@ const AppLayout = ({ children }: { children: StatelessComponent }): StatelessCom
       <Col>
         <main>
           <Switch>
-            <Route exact path='/' component={HomeContainer}/>
-            <Route path='*' component={NotFound}/>
+            <Route exact path="/" component={HomeContainer} />
+            <Route path="*" component={NotFound} />
           </Switch>
         </main>
       </Col>
@@ -36,11 +40,12 @@ const AppLayout = ({ children }: { children: StatelessComponent }): StatelessCom
     <Row>
       <Col>
         <footer className="py-1 text-center">
-          <p>Created by: <a href="https://mackiedrew.com/">Mackie Drew</a></p>
+          <p>
+            Created by: <a href="https://mackiedrew.com/">Mackie Drew</a>
+          </p>
         </footer>
       </Col>
     </Row>
-  </Container>
-);
+  </Container>;
 
 export default AppLayout;

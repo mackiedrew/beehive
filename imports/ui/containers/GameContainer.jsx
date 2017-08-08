@@ -5,18 +5,16 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-// Actions to Bind
-import setConfigValue from "../actionCreators/config/setConfigValue";
-import setSettingsValue from "../actionCreators/settings/setSettingsValue";
+// Action Creators to Bind
+import createBee from "../actionCreators/bees/createBee";
 
 // Component to Contain
-import SideBar from "../components/SideBar";
+import Game from "../components/Game";
 
 // Connect the STATE to the props fed into the component.
 export const mapStateToProps = (state: StrictState): MappedStateToProps => {
   return {
-    configFields: state.config,
-    settingsFields: state.settings
+    bees: state.bees.bees
   };
 };
 
@@ -26,17 +24,16 @@ export const mapDispatchToProps = (
 ): MappedDispatchToProps => {
   return bindActionCreators(
     {
-      configSettingAction: setConfigValue,
-      settingsSettingAction: setSettingsValue
+      createBee: createBee
     },
     dispatch
   );
 };
 
 // Create higher-order component which feeds in specified props.
-const SideBarContainer: StatelessComponent = connect(
+const GameContainer: StatelessComponent = connect(
   mapStateToProps,
   mapDispatchToProps
-)(SideBar);
+)(Game);
 
-export default SideBarContainer;
+export default GameContainer;
