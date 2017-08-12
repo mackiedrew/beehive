@@ -23,12 +23,8 @@ const Navigation = ({
     <Container fluid>
       <Row>
         {navigationItems.map(({ label, path }, i) =>
-          <Col className="text-center p-1">
-            <NavigationItem
-              key={`nav-item-${label}-${i}`}
-              label={label}
-              path={path}
-            />
+          <Col className="text-center p-1" key={`nav-item-${label}-${i}`}>
+            <NavigationItem label={label} path={path} />
           </Col>
         )}
       </Row>

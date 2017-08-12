@@ -49,6 +49,22 @@ declare module "reactstrap" {
   declare module.exports: any;
 }
 
+declare module "simpl-schema" {
+  declare module.exports: any;
+}
+
+declare module "underscore" {
+  declare module.exports: any;
+}
+
+declare module "reselect" {
+  declare module.exports: any;
+}
+
+declare module "Mongo" {
+  declare module.exports: any;
+}
+
 declare module "react-redux" {
   declare module.exports: {
     connect: (

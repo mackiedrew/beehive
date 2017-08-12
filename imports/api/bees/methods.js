@@ -25,7 +25,7 @@ export const fetchAllForUser = new ValidatedMethod({
 export const insert = new ValidatedMethod({
   name: "bees.insert",
   validate: null,
-  run() {
+  run({ bee }) {
     try {
       const newBee = {
         ...bee,
@@ -35,7 +35,7 @@ export const insert = new ValidatedMethod({
       return result;
     } catch (error) {
       const newError = new Meteor.Error(
-        "InsertBeesError",
+        "api.bees.insert.unspecifiedError",
         "Could not insert a new bee.",
         error
       );
@@ -78,7 +78,7 @@ export const remove = new ValidatedMethod({
     if (!bee.editableBy(this.userId)) {
       throw new Meteor.Error(
         "api.bees.remove.accessDenied",
-        "You don't have permission to remove this list."
+        "You don't have permission to remove this bee."
       );
     }
 
@@ -86,8 +86,16 @@ export const remove = new ValidatedMethod({
   }
 });
 
+export const removeAllForUser = new ValidatedMethod({
+  name: "bees.removeAllForUser",
+  validate: null,
+  run() {
+    return Bees.remove({ userId: this.userId });
+  }
+});
+
 const BEES_METHODS = _.pluck(
-  [insert, updateName, remove, fetchAllForUser],
+  [insert, updateName, remove, removeAllForUser, fetchAllForUser],
   "name"
 );
 

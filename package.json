@@ -5,11 +5,11 @@
   "repository": "http://github.com/mackiedrew/beehive/",
   "scripts": {
     "start": "MONGO_URL=mongodb://localhost:27017/beehive meteor run",
-    "flow": "flow check",
-    "flow:coverage": "flow-coverage-report",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "lint:check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "flow": "./node_modules/.bin/flow check",
+    "flow:coverage": "./node_modules/.bin/flow-coverage-report",
+    "lint": "./node_modules/.bin/eslint .",
+    "lint:fix": "./node_modules/.bin/eslint . --fix",
+    "lint:check": "./node_modules/.bin/eslint --print-config .eslintrc.js | ./node_modules/.bin/eslint-config-prettier-check",
     "test": "meteor npm run lint && meteor npm run flow",
     "prepush": "meteor npm test"
   },
@@ -27,8 +27,8 @@
     "reactstrap": "4.8.0",
     "redux": "3.7.2",
     "redux-saga": "0.15.6",
-    "reselect": "^3.0.1",
-    "simpl-schema": "^0.3.2",
+    "reselect": "3.0.1",
+    "simpl-schema": "0.3.2",
     "underscore": "1.8.3"
   },
   "devDependencies": {

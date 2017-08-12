@@ -6,7 +6,8 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 // Actions to Bind
-import createBee from "../actionCreators/bees/createBee";
+import createBeeRequest from "../actionCreators/bees/createBeeRequest";
+import removeAllBeesRequest from "../actionCreators/bees/removeAllBeesRequest";
 
 // Selectors
 import getNumberOfBees from "../selectors/bees/getNumberOfBees";
@@ -27,7 +28,8 @@ export const mapDispatchToProps = (
 ): MappedDispatchToProps => {
   return bindActionCreators(
     {
-      createBee: createBee
+      createBee: createBeeRequest,
+      removeAllBees: removeAllBeesRequest
     },
     dispatch
   );

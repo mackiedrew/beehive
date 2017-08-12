@@ -8,10 +8,15 @@ import createSagaMiddleware from "redux-saga";
 import rootReducer from "./rootReducer";
 
 // Sagas
-import fetchBeesSaga from "./sagas/bees/fetchBees";
 import createBeeSaga from "./sagas/bees/createBee";
+import fetchBeesSaga from "./sagas/bees/fetchBees";
+import removeAllBeesSaga from "./sagas/bees/removeAllBees";
 
-export const combinedSagas = () => [fetchBeesSaga, createBeeSaga];
+export const combinedSagas = () => [
+  createBeeSaga,
+  fetchBeesSaga,
+  removeAllBeesSaga
+];
 
 export const registerSagas = (sagaMiddleware, sagas) =>
   sagas.forEach(sagaMiddleware.run);

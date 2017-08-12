@@ -21,7 +21,7 @@ const Home = ({
   toggleSideBar: () => void,
   sideBarOpen: boolean
 }): StatelessComponent =>
-  <Container className="px-0" fluid>
+  <Container fluid>
     <Row>
       <Col>
         <Button onClick={() => toggleSideBar()}>Toggle Sidebar</Button>
@@ -29,7 +29,7 @@ const Home = ({
     </Row>
     <Row>
       {sideBarOpen &&
-        <Col>
+        <Col xs={12} sm={4} md={3}>
           <SideBarContainer />
         </Col>}
       <Col>

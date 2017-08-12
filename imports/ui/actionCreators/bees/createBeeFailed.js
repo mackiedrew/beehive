@@ -4,7 +4,7 @@
 import { CREATE_BEE_FAILED } from "../../actionTypes/bees";
 
 // Action Creator
-export const createBeeFailed = (error: Error): Action => ({
+export const createBeeFailed = (error: string): Action => ({
   type: CREATE_BEE_FAILED,
   payload: error
 });

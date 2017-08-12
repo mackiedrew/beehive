@@ -15,9 +15,9 @@ declare var window: {
 declare type StatefulLink = { label: string, path: string };
 
 // Feilds
-declare type NumberFields = { [key: string]: ?number };
-declare type StringFields = { [key: string]: ?string };
-declare type BooleanFields = { [key: string]: ?boolean };
+declare type NumberFields = { [key: string]: number };
+declare type StringFields = { [key: string]: string };
+declare type BooleanFields = { [key: string]: boolean };
 declare type Fields = NumberFields | StringFields | BooleanFields;
 
 // Game
@@ -39,15 +39,16 @@ declare type SettingsState = {
   hiveName: string
 };
 
-declare type GameState = {
-  bees: Array<Bee>
+declare type BeesState = {
+  bees: Array<Bee>,
+  error: null | Error
 };
 
 declare type StrictState = {
   ui: UIState,
   config: ConfigState,
   settings: SettingsState,
-  game: GameState
+  bees: BeesState
 };
 
 // Redux

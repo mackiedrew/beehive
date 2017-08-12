@@ -13,17 +13,22 @@ import { Container, Row, Col, Button } from "reactstrap";
  */
 const SideBar = ({
   numberOfBees,
-  createBee
+  createBee,
+  removeAllBees
 }: {
   numberOfBees: number,
-  createBee: () => void
+  createBee: () => void,
+  removeAllBees: () => void
 }): StatelessComponent =>
   <aside>
     <Container className="side-bar" fluid>
-      <Row noGutters>
-        <Col xs={12}>
-          <Button onClick={createBee} color="primary">
+      <Row>
+        <Col>
+          <Button onClick={() => createBee()} color="primary">
             Create Bee ({numberOfBees})
+          </Button>
+          <Button onClick={() => removeAllBees()} color="danger">
+            Delete All Bees
           </Button>
         </Col>
       </Row>
