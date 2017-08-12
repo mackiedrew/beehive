@@ -11,6 +11,9 @@ declare var window: {
   }
 };
 
+// UI
+declare type StatefulLink = { label: string, path: string };
+
 // Feilds
 declare type NumberFields = { [key: string]: ?number };
 declare type StringFields = { [key: string]: ?string };

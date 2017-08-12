@@ -6,8 +6,10 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 // Actions to Bind
-import setConfigValue from "../actionCreators/config/setConfigValue";
-import setSettingsValue from "../actionCreators/settings/setSettingsValue";
+import createBee from "../actionCreators/bees/createBee";
+
+// Selectors
+import getNumberOfBees from "../selectors/bees/getNumberOfBees";
 
 // Component to Contain
 import SideBar from "../components/SideBar";
@@ -15,8 +17,7 @@ import SideBar from "../components/SideBar";
 // Connect the STATE to the props fed into the component.
 export const mapStateToProps = (state: StrictState): MappedStateToProps => {
   return {
-    configFields: state.config,
-    settingsFields: state.settings
+    numberOfBees: getNumberOfBees(state)
   };
 };
 
@@ -26,8 +27,7 @@ export const mapDispatchToProps = (
 ): MappedDispatchToProps => {
   return bindActionCreators(
     {
-      configSettingAction: setConfigValue,
-      settingsSettingAction: setSettingsValue
+      createBee: createBee
     },
     dispatch
   );

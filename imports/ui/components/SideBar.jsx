@@ -4,9 +4,7 @@
 import React from "react";
 
 // Components
-import { Container, Row, Col } from "reactstrap";
-import FieldRows from "./FieldRows";
-
+import { Container, Row, Col, Button } from "reactstrap";
 /**
  * A list of field rows with a header.
  *
@@ -14,34 +12,19 @@ import FieldRows from "./FieldRows";
  * @returns {Element} Stateless functional React component.
  */
 const SideBar = ({
-  settingsFields = {},
-  configFields = {},
-  settingsSettingAction,
-  configSettingAction
+  numberOfBees,
+  createBee
 }: {
-  settingsFields: Fields,
-  configFields: Fields,
-  settingsSettingAction: ((label: string, value: InputValue) => void) | void,
-  configSettingAction: ((label: string, value: InputValue) => void) | void
+  numberOfBees: number,
+  createBee: () => void
 }): StatelessComponent =>
   <aside>
-    <Container className="sidebar" fluid>
+    <Container className="side-bar" fluid>
       <Row noGutters>
-        <Col>
-          <FieldRows
-            heading="Settings"
-            fields={settingsFields}
-            stateSettingAction={settingsSettingAction}
-          />
-        </Col>
-      </Row>
-      <Row noGutters>
-        <Col>
-          <FieldRows
-            heading="Configuration"
-            fields={configFields}
-            stateSettingAction={configSettingAction}
-          />
+        <Col xs={12}>
+          <Button onClick={createBee} color="primary">
+            Create Bee ({numberOfBees})
+          </Button>
         </Col>
       </Row>
     </Container>

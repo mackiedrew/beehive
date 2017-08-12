@@ -1,6 +1,7 @@
 // @flow
 
 // Framework
+import { Meteor } from "meteor/meteor";
 import React from "react";
 
 // Components
@@ -12,13 +13,7 @@ import { Container, Row, Col, Button } from "reactstrap";
  * @param {Object} props All the properties passed to the React Component.
  * @returns {Element} Stateless functional React component.
  */
-const Game = ({
-  bees = [],
-  createBee
-}: {
-  bees: Array<Bee>,
-  createBee: () => void
-}): StatelessComponent =>
+const Game = ({ bees = [] }: { bees: Array<Bee> }): StatelessComponent =>
   <Container className="game" fluid>
     <Row noGutters>
       <Col>
@@ -28,11 +23,6 @@ const Game = ({
     <Row noGutters>
       <Col>
         <Container fluid>
-          <Row noGutters>
-            <Col>
-              <Button onClick={createBee}>Create New Bee</Button>
-            </Col>
-          </Row>
           <Row noGutters>
             <Col>
               <p>

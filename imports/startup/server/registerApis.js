@@ -1,3 +1,4 @@
 // @flow
 
-import "../../api/bees";
+import "../../api/bees/collection";
+import "../../api/bees/methods";

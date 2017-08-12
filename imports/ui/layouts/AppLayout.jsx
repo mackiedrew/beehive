@@ -2,12 +2,22 @@
 
 // Framework
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 
 // Components
 import { Container, Row, Col, Button } from "reactstrap";
+import Navigation from "../components/Navigation";
+
 import HomeContainer from "../containers/HomeContainer";
+import ConfigContainer from "../containers/ConfigContainer";
+import SettingsContainer from "../containers/SettingsContainer";
 import NotFound from "../components/NotFound";
+
+const navigationItems: Array<StatefulLink> = [
+  { label: "Game", path: "/" },
+  { label: "Settings", path: "/settings" },
+  { label: "Config", path: "/config" }
+];
 
 /**
  * Main rendering entry point for the app.
@@ -27,11 +37,18 @@ const AppLayout = ({
         </header>
       </Col>
     </Row>
+    <Row className="bg-faded">
+      <Col>
+        <Navigation navigationItems={navigationItems} />
+      </Col>
+    </Row>
     <Row noGutters>
       <Col>
         <main>
           <Switch>
             <Route exact path="/" component={HomeContainer} />
+            <Route exact path="/config" component={ConfigContainer} />
+            <Route exact path="/settings" component={SettingsContainer} />
             <Route path="*" component={NotFound} />
           </Switch>
         </main>

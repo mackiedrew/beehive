@@ -5,13 +5,16 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
+// Actions to Bind
+import setSettingsValue from "../actionCreators/settings/setSettingsValue";
+
 // Component to Contain
-import Game from "../components/Game";
+import Settings from "../components/Settings";
 
 // Connect the STATE to the props fed into the component.
 export const mapStateToProps = (state: StrictState): MappedStateToProps => {
   return {
-    bees: state.bees.bees
+    settingsFields: state.settings
   };
 };
 
@@ -19,13 +22,18 @@ export const mapStateToProps = (state: StrictState): MappedStateToProps => {
 export const mapDispatchToProps = (
   dispatch: Dispatch
 ): MappedDispatchToProps => {
-  return bindActionCreators({}, dispatch);
+  return bindActionCreators(
+    {
+      settingsSettingAction: setSettingsValue
+    },
+    dispatch
+  );
 };
 
 // Create higher-order component which feeds in specified props.
-const GameContainer: StatelessComponent = connect(
+const SettingsContainer: StatelessComponent = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Game);
+)(Settings);
 
-export default GameContainer;
+export default SettingsContainer;

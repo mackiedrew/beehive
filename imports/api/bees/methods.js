@@ -26,7 +26,22 @@ export const insert = new ValidatedMethod({
   name: "bees.insert",
   validate: null,
   run() {
-    return Bees.insert({});
+    try {
+      const newBee = {
+        ...bee,
+        userId: this.userId
+      };
+      const result = Bees.insert(newBee);
+      return result;
+    } catch (error) {
+      const newError = new Meteor.Error(
+        "InsertBeesError",
+        "Could not insert a new bee.",
+        error
+      );
+      console.error(newError);
+      throw newError;
+    }
   }
 });
 
@@ -50,7 +65,7 @@ export const updateName = new ValidatedMethod({
       $set: { name: newName }
     });
   }
-})
+});
 
 export const remove = new ValidatedMethod({
   name: "bees.remove",

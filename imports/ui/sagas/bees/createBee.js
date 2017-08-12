@@ -18,6 +18,7 @@ export function* createBeeWorker(action) {
     yield call(Meteor.call, "bees.insert", insertParams);
     yield put(createBeeSuccessful());
   } catch (error) {
+    console.error(error)
     yield put(createBeeFailed(error));
   }
 }
