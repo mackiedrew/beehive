@@ -17,7 +17,7 @@ import fetchBeesRequest from "../../actionCreators/bees/fetchBeesRequest";
 // Worker
 export function* createBeeWorker(action: Action) {
   try {
-    const callValues = { beePrototype: action.payload };
+    const callValues = { bee: action.payload };
     yield call(meteorPromise, "bees.insert", callValues);
     yield put(createBeeSuccessful());
     yield put(fetchBeesRequest());

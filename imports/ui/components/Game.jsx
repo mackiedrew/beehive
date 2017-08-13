@@ -5,7 +5,8 @@ import { Meteor } from "meteor/meteor";
 import React from "react";
 
 // Components
-import { Container, Row, Col, Button } from "reactstrap";
+import { Container, Row, Col, Button, CardColumns } from "reactstrap";
+import BeeCard from "./BeeCard";
 
 /**
  * The main game element.
@@ -22,16 +23,15 @@ const Game = ({ bees = [] }: { bees: Array<Bee> }): StatelessComponent =>
     </Row>
     <Row noGutters>
       <Col>
-        <Container fluid>
-          <Row noGutters>
-            <Col>
-              <p>
-                <strong>Bees:</strong> {bees.length}
-              </p>
-            </Col>
-          </Row>
-        </Container>
+        <p>
+          <strong>Total Bees:</strong> {bees.length}
+        </p>
       </Col>
+    </Row>
+    <Row>
+      <CardColumns>
+        {bees.map(bee => <BeeCard key={bee._id} bee={bee} />)}
+      </CardColumns>
     </Row>
   </Container>;
 

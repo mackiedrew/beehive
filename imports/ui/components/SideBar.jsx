@@ -4,7 +4,7 @@
 import React from "react";
 
 // Components
-import { Container, Row, Col, Button } from "reactstrap";
+import { Container, Row, Col, ButtonGroup, Button } from "reactstrap";
 /**
  * A list of field rows with a header.
  *
@@ -19,20 +19,31 @@ const SideBar = ({
   numberOfBees: number,
   createBee: () => void,
   removeAllBees: () => void
-}): StatelessComponent =>
-  <aside>
-    <Container className="side-bar" fluid>
-      <Row>
-        <Col>
-          <Button onClick={() => createBee()} color="primary">
-            Create Bee ({numberOfBees})
-          </Button>
-          <Button onClick={() => removeAllBees()} color="danger">
-            Delete All Bees
-          </Button>
-        </Col>
-      </Row>
-    </Container>
-  </aside>;
+}): StatelessComponent => {
+  const createBeeType = type => ({ type });
+  const createWorker = () => createBee(createBeeType("Worker"));
+  const createDrone = () => createBee(createBeeType("Drone"));
+  const createQueen = () => createBee(createBeeType("Queen"));
+  const removeBees = () => removeAllBees();
+
+  return (
+    <aside>
+      <Container className="side-bar" fluid>
+        <Row>
+          <Col>
+            <ButtonGroup size="sm">
+              <Button onClick={createWorker}>Worker</Button>
+              <Button onClick={createDrone}>Drone</Button>
+              <Button onClick={createQueen}>Queen</Button>
+              <Button onClick={removeBees} color="danger">
+                X
+              </Button>
+            </ButtonGroup>
+          </Col>
+        </Row>
+      </Container>
+    </aside>
+  );
+};
 
 export default SideBar;
