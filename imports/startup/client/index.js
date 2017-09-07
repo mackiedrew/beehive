@@ -12,6 +12,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import AppLayout from "../../ui/layouts/AppLayout";
 import configureStore from "../../ui/configureStore";
 
+// Initial Actions
+import initAppRequest from "../../ui/actionCreators/generic/init";
+
 // Make redux initial store
 const store = configureStore();
 
@@ -28,5 +31,8 @@ const renderApp = () =>
 
 // Start App
 Meteor.startup(() => {
+  //load bees initially
+  store.dispatch(initAppRequest())
+
   renderApp();
 });

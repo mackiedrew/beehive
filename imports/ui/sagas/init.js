@@ -4,14 +4,14 @@
 import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
 
 // Helpers
-import meteorPromise from "../../helpers/meteorPromise";
+import meteorPromise from "../helpers/meteorPromise";
 
 // Action Types
-import { INIT } from "../../actionTypes/generic";
+import { INIT } from "../actionTypes/generic";
 
 // Action Creators
-import fetchBeesRequest from "../../actionCreators/bees/fetchBeesRequest";
-import asyncInitFailed from "../../actionCreators/bees/asyncInitFailed";
+import fetchBeesRequest from "../actionCreators/bees/fetchBeesRequest";
+import asyncInitFailed from "../actionCreators/bees/asyncInitFailed";
 
 // Worker
 export function* initializeAsyncStateWorker(action: Action) {
