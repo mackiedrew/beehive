@@ -14,7 +14,13 @@ import BeeCard from "./BeeCard";
  * @param {Object} props All the properties passed to the React Component.
  * @returns {Element} Stateless functional React component.
  */
-const Game = ({ bees = [] }: { bees: Array<Bee> }): StatelessComponent =>
+const Game = ({
+  bees = [],
+  removeBee
+}: {
+  bees: Array<Bee>,
+  removeBee: () => void
+}): StatelessComponent =>
   <Container className="game" fluid>
     <Row noGutters>
       <Col>
@@ -30,7 +36,7 @@ const Game = ({ bees = [] }: { bees: Array<Bee> }): StatelessComponent =>
     </Row>
     <Row>
       <CardColumns>
-        {bees.map(bee => <BeeCard key={bee._id} bee={bee} />)}
+        {bees.map(bee => <BeeCard key={bee._id} bee={bee} removeBee={removeBee} />)}
       </CardColumns>
     </Row>
   </Container>;

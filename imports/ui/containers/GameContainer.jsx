@@ -5,6 +5,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
+// Actions to Bind
+import removeBeeRequest from "../actionCreators/bees/removeBeeRequest";
+
 // Component to Contain
 import Game from "../components/Game";
 
@@ -19,7 +22,9 @@ export const mapStateToProps = (state: StrictState): MappedStateToProps => {
 export const mapDispatchToProps = (
   dispatch: Dispatch
 ): MappedDispatchToProps => {
-  return bindActionCreators({}, dispatch);
+  return bindActionCreators({
+    removeBee: removeBeeRequest
+  }, dispatch);
 };
 
 // Create higher-order component which feeds in specified props.
