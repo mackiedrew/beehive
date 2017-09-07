@@ -8,12 +8,14 @@ import createSagaMiddleware from "redux-saga";
 import rootReducer from "./rootReducer";
 
 // Sagas
+import initSaga from "./sagas/init";
 import createBeeSaga from "./sagas/bees/createBee";
 import fetchBeesSaga from "./sagas/bees/fetchBees";
 import removeAllBeesSaga from "./sagas/bees/removeAllBees";
 import removeBeeSaga from "./sagas/bees/removeBee";
 
 export const combinedSagas = () => [
+  initSaga,
   createBeeSaga,
   fetchBeesSaga,
   removeAllBeesSaga,
