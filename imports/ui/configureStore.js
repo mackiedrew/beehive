@@ -3,6 +3,14 @@
 // Libraries
 import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
+import {
+  ConnectedRouter,
+  routerReducer,
+  routerMiddleware,
+  push
+} from "react-router-redux";
+
+import createHistory from "history/createBrowserHistory";
 
 // Reducers
 import rootReducer from "./rootReducer";
@@ -25,6 +33,8 @@ export const combinedSagas = () => [
 export const registerSagas = (sagaMiddleware, sagas) =>
   sagas.forEach(sagaMiddleware.run);
 
+export const history = createHistory();
+
 /**
  * Configures the initialization of a React store, applying middleware, and interfacing with
  * tooling.
@@ -33,10 +43,15 @@ export const registerSagas = (sagaMiddleware, sagas) =>
  * @returns {Store} Generates an enhanced Redux Store.
  */
 export const configureStore = (initialState: ?State): Store => {
+  // Build the middleware for intercepting and dispatching navigation actions
+  const routerStoreMiddleware = routerMiddleware(history);
   // Create saga middleware
   const sagaMiddleware = createSagaMiddleware();
   // Create a function that can apply the saga middleware to a StoreCreator
-  const sagaStoreEnhancer: StoreEnhancer = applyMiddleware(sagaMiddleware);
+  const sagaStoreEnhancer: StoreEnhancer = applyMiddleware(
+    sagaMiddleware,
+    routerStoreMiddleware
+  );
   // Create a function that can create a store with the new middleware
   const createStoreWithMiddleWare: StoreCreator = sagaStoreEnhancer(
     createStore
