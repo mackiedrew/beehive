@@ -2,7 +2,6 @@
 
 // Framework
 import React from "react";
-import { Link } from "react-router-dom";
 
 // Components
 import { Container, Row, Col } from "reactstrap";
@@ -24,7 +23,8 @@ const Navigation = ({
       <Row>
         {navigationItems.map(({ label, path }, i) =>
           <Col className="text-center p-1" key={`nav-item-${label}-${i}`}>
-            <NavigationItem label={label} path={path} />
+            {/*<NavigationItem label={label} path={path} />*/}
+            {label}
           </Col>
         )}
       </Row>

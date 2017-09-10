@@ -3,7 +3,6 @@ import React from "react";
 import { Meteor } from "meteor/meteor";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
 
 // Libraries
 import "bootstrap/dist/css/bootstrap.css";
@@ -22,9 +21,7 @@ const store = configureStore();
 const renderApp = () =>
   render(
     <Provider store={store}>
-      <BrowserRouter>
-        <AppLayout />
-      </BrowserRouter>
+      <AppLayout />
     </Provider>,
     document.getElementById("render-target")
   );

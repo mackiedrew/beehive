@@ -2,16 +2,21 @@
 
 // Framework
 import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Route, Link } from "react-router";
+import { ConnectedRouter } from 'react-router-redux'
 
 // Components
 import { Container, Row, Col, Button } from "reactstrap";
 import Navigation from "../components/Navigation";
 
+import { history } from "../configureStore";
+
 import HomeContainer from "../containers/HomeContainer";
 import ConfigContainer from "../containers/ConfigContainer";
 import SettingsContainer from "../containers/SettingsContainer";
 import NotFound from "../components/NotFound";
+
+
 
 const navigationItems: Array<StatefulLink> = [
   { label: "Game", path: "/" },
@@ -45,12 +50,14 @@ const AppLayout = ({
     <Row noGutters>
       <Col>
         <main>
-          <Switch>
-            <Route exact path="/" component={HomeContainer} />
-            <Route exact path="/config" component={ConfigContainer} />
-            <Route exact path="/settings" component={SettingsContainer} />
-            <Route path="*" component={NotFound} />
-          </Switch>
+          <ConnectedRouter history={history}>
+            <div>
+              <Route exact path="/" component={HomeContainer} />
+              <Route exact path="/config" component={ConfigContainer} />
+              <Route exact path="/settings" component={SettingsContainer} />
+              <Route path="*" component={NotFound} />
+            </div>
+          </ConnectedRouter>
         </main>
       </Col>
     </Row>

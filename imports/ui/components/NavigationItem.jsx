@@ -2,7 +2,7 @@
 
 // Framework
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 /**
  * A single navigation item.
@@ -17,6 +17,7 @@ const NavigationItem = ({
   label: string,
   path: string
 }): StatelessComponent =>
+  //TODO: fix Link component that is broken
   <Link className="navigation-item" to={path}>
     {label}
   </Link>;
