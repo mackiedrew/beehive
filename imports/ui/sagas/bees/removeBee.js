@@ -17,7 +17,6 @@ import fetchBeesRequest from "../../actionCreators/bees/fetchBeesRequest";
 // Worker
 export function* removeBeeWorker(action: Action) {
   try {
-    debugger;
     const callValues = { beeId: action.payload };
     yield call(meteorPromise, "bees.remove", callValues);
     yield put(removeBeeSuccessful());
