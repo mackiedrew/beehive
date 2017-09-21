@@ -2,8 +2,8 @@
 
 // Framework
 import { Meteor } from "meteor/meteor";
+import { Mongo } from "meteor/mongo";
 import SimpleSchema from "simpl-schema";
-import { Factory } from "meteor/dburles:factory";
 
 class BeesCollection extends Mongo.Collection {
   insert(bee: Bee, callback: Function): string {

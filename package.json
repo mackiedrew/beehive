@@ -10,8 +10,9 @@
     "lint": "./node_modules/.bin/eslint .",
     "lint:fix": "./node_modules/.bin/eslint . --fix",
     "lint:check": "./node_modules/.bin/eslint --print-config .eslintrc.js | ./node_modules/.bin/eslint-config-prettier-check",
-    "test": "meteor npm run lint && meteor npm run flow",
-    "prepush": "meteor npm test"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "prepush": "npm run lint && npm test"
   },
   "dependencies": {
     "babel-runtime": "6.25.0",
@@ -34,6 +35,10 @@
   "devDependencies": {
     "autoprefixer": "7.1.2",
     "babel-eslint": "7.2.3",
+    "babel-jest": "^21.0.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
     "eslint": "4.3.0",
     "eslint-config-prettier": "2.3.0",
     "eslint-plugin-flowtype": "2.35.0",
@@ -43,8 +48,43 @@
     "flow-coverage-report": "0.3.0",
     "flow-typed": "2.1.5",
     "husky": "0.14.3",
+    "jest-cli": "^21.1.0",
     "prettier": "1.5.3",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
     "redux-devtools": "3.4.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "modulePaths": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/node_modules/jest-meteor-stubs/lib/"
+    ],
+    "moduleNameMapper": {
+      "^(.*):(.*)$": "$1_$2"
+    },
+    "unmockedModulePathPatterns": [
+      "/^imports\\/.*\\.jsx?$/",
+      "/^node_modules/"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": ["json", "html"]
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "flow",
+      "react"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
   },
   "postcss": {
     "plugins": {

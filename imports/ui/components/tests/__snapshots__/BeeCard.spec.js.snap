@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BeeCard BeeCard SnapShot renders BeeCard correctly 1`] = `
+<div
+  className="bee-card card"
+>
+  <img
+    alt="test type Bee"
+    className="card-img-top"
+    src="./images/bees/test type.jpg"
+    width="100%"
+  />
+  <div
+    className="card-block"
+  >
+    <h4
+      className="card-title"
+    >
+      test bee
+    </h4>
+    <h6
+      className="card-subtitle"
+    >
+      test type
+    </h6>
+    <button
+      className="btn btn-danger"
+      onClick={[Function]}
+      type="button"
+    >
+      Delete
+    </button>
+  </div>
+</div>
+`;
