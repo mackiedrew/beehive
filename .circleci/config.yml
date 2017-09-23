@@ -5,6 +5,8 @@
 version: 2
 jobs:
   build:
+    environment:
+      CC_TEST_REPORTER_ID: b440a5f5dd4e9015c5e4bdacc7c272576a6487f6379bbed10db3f0155fea6228
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
@@ -18,6 +20,10 @@ jobs:
 
     steps:
       - checkout
+
+      - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+      - run: chmod +x ./cc-test-reporter
+      - run: ./cc-test-reporter before-build
 
       - run: curl https://install.meteor.com | /bin/sh
 
@@ -37,3 +43,5 @@ jobs:
 
       # run tests!
       - run: yarn test
+
+      - run: ./cc-test-reporter after-build -t lcov --exit-code 0
