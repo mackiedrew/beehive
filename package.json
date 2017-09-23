@@ -36,6 +36,7 @@
     "autoprefixer": "7.1.2",
     "babel-eslint": "7.2.3",
     "babel-jest": "^21.0.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
@@ -50,7 +51,6 @@
     "husky": "0.14.3",
     "jest-cli": "^21.1.0",
     "prettier": "1.5.3",
-    "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1",
     "redux-devtools": "3.4.0"
   },
@@ -74,7 +74,10 @@
       "/^node_modules/"
     ],
     "collectCoverage": true,
-    "coverageReporters": ["json", "html"]
+    "coverageReporters": [
+      "json",
+      "html"
+    ]
   },
   "babel": {
     "presets": [

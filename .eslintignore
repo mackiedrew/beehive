@@ -2,3 +2,4 @@
 .meteor
 .git
 node_modules
+coverage
