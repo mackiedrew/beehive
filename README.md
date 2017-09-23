@@ -1,5 +1,8 @@
 # Beehive Simulator
 
+## Status
+![CircleCI](https://circleci.com/gh/mackbrowne/beehive/tree/master.svg?style=shield&circle-token=30f0ed1a6045574cfcdbb88412a32d12efa7be06)
+
 ## Bee Types
 
 - **Queen**: Enter description.
