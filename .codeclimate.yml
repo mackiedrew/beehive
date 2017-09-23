@@ -1,0 +1,14 @@
+engines:
+  duplication:
+    enabled: true
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+ratings:
+  paths:
+  - client/**
+  - imports/**
+  - server/**
+exclude_paths:
+- "**/tests/**/*"
