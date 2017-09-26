@@ -19,7 +19,7 @@
     "history": "^4.7.2",
     "meteor-node-stubs": "0.2.4",
     "react": "15.6.1",
-    "react-addons-css-transition-group": "15.6.0",
+    "react-addons-css-transition-group": "15.6.2",
     "react-addons-transition-group": "15.6.0",
     "react-dom": "15.6.1",
     "react-redux": "5.0.5",
