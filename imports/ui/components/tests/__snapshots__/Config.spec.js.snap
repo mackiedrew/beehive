@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Config Config SnapShot renders config correctly 1`] = `
+exports[`<Config /> Config SnapShot renders config correctly 1`] = `
 <aside>
   <div
     className="config container-fluid"

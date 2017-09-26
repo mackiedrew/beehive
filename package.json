@@ -40,6 +40,8 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.0.0",
+    "enzyme-adapter-react-15": "^1.0.0",
     "eslint": "4.3.0",
     "eslint-config-prettier": "2.3.0",
     "eslint-plugin-flowtype": "2.35.0",
@@ -74,7 +76,7 @@
       "/^node_modules/"
     ],
     "collectCoverage": true,
-    "collectCoverageFrom" : [
+    "collectCoverageFrom": [
       "imports/**/*.js",
       "imports/**/*.jsx"
     ],
