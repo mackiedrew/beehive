@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Game /> Game SnapShot renders Game correctly 1`] = `
+<div
+  className="game container-fluid"
+>
+  <div
+    className="no-gutters row"
+  >
+    <div
+      className="col"
+    >
+      <p>
+        Game
+      </p>
+    </div>
+  </div>
+  <div
+    className="no-gutters row"
+  >
+    <div
+      className="col"
+    >
+      <p>
+        <strong>
+          Total Bees:
+        </strong>
+         
+        0
+      </p>
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="card-columns"
+    />
+  </div>
+</div>
+`;

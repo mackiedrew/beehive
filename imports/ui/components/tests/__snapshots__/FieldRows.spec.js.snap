@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FieldRows /> FieldRows SnapShot renders FieldRows correctly 1`] = `
+<div
+  className="field-rows px-0 container-fluid"
+>
+  <div
+    className="no-gutters row"
+  >
+    <div
+      className="col"
+    >
+      <h3>
+        Fields
+      </h3>
+    </div>
+  </div>
+  <div
+    className="no-gutters row"
+  >
+    <div
+      className="col"
+    >
+      <form
+        className=""
+      >
+        <div
+          className="field-row form-group"
+        >
+          <label
+            className=" form-control-label"
+            htmlFor="tickrate-number-field-row-input"
+          >
+            Tickrate
+          </label>
+          <input
+            className="form-control"
+            id="tickrate-number-field-row-input"
+            name="tickrate-number-field-row-input"
+            onChange={[Function]}
+            placeholder="Tickrate"
+            type="text"
+            value={50}
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

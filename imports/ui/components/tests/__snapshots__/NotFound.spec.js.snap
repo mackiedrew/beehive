@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFound /> NotFound SnapShot renders NotFound correctly 1`] = `
+<div
+  className="not-found container"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <p>
+        <strong>
+          Error [404]
+        </strong>
+        : 
+        blank
+         does not exist.
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FieldRow /> FieldRow SnapShot renders FieldRow correctly 1`] = `
+<div
+  className="field-row form-group"
+>
+  <label
+    className="sr-only  form-control-label"
+    htmlFor="NewField-number-field-row-input"
+  >
+    New Field
+  </label>
+  <input
+    className="form-control"
+    id="NewField-number-field-row-input"
+    name="NewField-number-field-row-input"
+    onChange={[Function]}
+    placeholder="New Field"
+    type="text"
+    value={15}
+  />
+</div>
+`;

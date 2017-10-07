@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SideBar /> SideBar SnapShot renders SideBar correctly 1`] = `
+<aside>
+  <div
+    className="side-bar container-fluid"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col"
+      >
+        <div
+          className="btn-group-sm btn-group"
+          role="group"
+        >
+          <button
+            className="btn btn-secondary"
+            onClick={[Function]}
+            type="button"
+          >
+            Worker
+          </button>
+          <button
+            className="btn btn-secondary"
+            onClick={[Function]}
+            type="button"
+          >
+            Drone
+          </button>
+          <button
+            className="btn btn-secondary"
+            onClick={[Function]}
+            type="button"
+          >
+            Queen
+          </button>
+          <button
+            className="btn btn-danger"
+            onClick={[Function]}
+            type="button"
+          >
+            X
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+`;

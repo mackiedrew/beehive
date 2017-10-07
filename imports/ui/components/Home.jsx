@@ -24,7 +24,7 @@ const Home = ({
   <Container fluid>
     <Row>
       <Col>
-        <Button onClick={() => toggleSideBar()}>Toggle Sidebar</Button>
+        <Button onClick={toggleSideBar}>Toggle Sidebar</Button>
       </Col>
     </Row>
     <Row>

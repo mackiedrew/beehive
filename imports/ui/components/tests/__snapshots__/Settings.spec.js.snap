@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Settings /> Settings SnapShot renders Settings correctly 1`] = `
+<aside>
+  <div
+    className="settings container-fluid"
+  >
+    <div
+      className="no-gutters row"
+    >
+      <div
+        className="col"
+      >
+        <div
+          className="field-rows px-0 container-fluid"
+        >
+          <div
+            className="no-gutters row"
+          >
+            <div
+              className="col"
+            >
+              <h3>
+                Settings
+              </h3>
+            </div>
+          </div>
+          <div
+            className="no-gutters row"
+          >
+            <div
+              className="col"
+            >
+              <form
+                className=""
+              >
+                <div
+                  className="field-row form-group"
+                >
+                  <label
+                    className=" form-control-label"
+                    htmlFor="tickRate-number-field-row-input"
+                  >
+                    Tick Rate
+                  </label>
+                  <input
+                    className="form-control"
+                    id="tickRate-number-field-row-input"
+                    name="tickRate-number-field-row-input"
+                    onChange={[Function]}
+                    placeholder="Tick Rate"
+                    type="text"
+                    value={50}
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+`;
