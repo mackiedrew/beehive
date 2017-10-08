@@ -35,11 +35,12 @@
   "devDependencies": {
     "autoprefixer": "7.1.2",
     "babel-eslint": "7.2.3",
-    "babel-jest": "^21.0.2",
+    "babel-jest": "21.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-preset-env": "1.6.0",
     "babel-preset-flow": "^6.23.0",
-    "babel-preset-react": "^6.24.1",
+    "babel-preset-react": "6.24.1",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-15": "^1.0.0",
     "eslint": "4.3.0",
@@ -51,12 +52,14 @@
     "flow-coverage-report": "0.3.0",
     "flow-typed": "2.1.5",
     "husky": "0.14.3",
-    "jest-cli": "^21.1.0",
+    "jest": "21.2.1",
     "prettier": "1.5.3",
     "react-test-renderer": "^15.6.1",
-    "redux-devtools": "3.4.0"
+    "redux-devtools": "3.4.0",
+    "redux-saga-test-plan": "^3.2.0"
   },
   "jest": {
+    "setupFiles": ["<rootDir>/tests/jestSetup.js"],
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     },
@@ -65,11 +68,11 @@
       "jsx"
     ],
     "modulePaths": [
-      "<rootDir>/node_modules/",
-      "<rootDir>/node_modules/jest-meteor-stubs/lib/"
+      "<rootDir>/node_modules/"
     ],
     "moduleNameMapper": {
-      "^(.*):(.*)$": "$1_$2"
+      "^(.*):(.*)$": "$1_$2",
+      "meteor/(.*)": "<rootDir>/node_modules/jest-meteor-stubs/lib/meteor/$1.js"
     },
     "unmockedModulePathPatterns": [
       "/^imports\\/.*\\.jsx?$/",
@@ -93,7 +96,8 @@
       "react"
     ],
     "plugins": [
-      "transform-object-rest-spread"
+      "transform-object-rest-spread",
+      "transform-regenerator"
     ]
   },
   "postcss": {

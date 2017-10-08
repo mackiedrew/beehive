@@ -1,12 +1,9 @@
 import React from "react";
 import ReactTestRenderer from "react-test-renderer";
-import { configure, shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-15";
+import { shallow } from "enzyme";
 
 import Config from "../Config";
 import FieldRows from "../FieldRows";
-
-configure({ adapter: new Adapter() });
 
 describe("<Config />", () => {
   let configSettingAction = jest.fn();

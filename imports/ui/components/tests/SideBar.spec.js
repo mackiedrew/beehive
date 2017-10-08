@@ -1,13 +1,9 @@
 import React from "react";
 import ReactTestRenderer from "react-test-renderer";
-import { configure, shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-15";
+import { shallow } from "enzyme";
 
 import SideBar from "../SideBar";
-
 import { Button } from "reactstrap";
-
-configure({ adapter: new Adapter() });
 
 describe("<SideBar />", () => {
   const defaultProps = {

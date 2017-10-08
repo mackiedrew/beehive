@@ -24,8 +24,8 @@ export function* createBeeWorker(action: Action) {
 }
 
 // Watcher
-export function* createBeeWatcher() {
+export default function* createBeeWatcher() {
   yield takeLatest(CREATE_BEE_REQUEST, createBeeWorker);
 }
 
-export default createBeeWatcher;
+//export default createBeeWatcher;
