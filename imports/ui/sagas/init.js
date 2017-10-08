@@ -3,9 +3,6 @@
 // Framework
 import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
 
-// Helpers
-import meteorPromise from "../helpers/meteorPromise";
-
 // Action Types
 import { INIT } from "../actionTypes/generic";
 

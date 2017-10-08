@@ -24,3 +24,4 @@ mdg:validated-method
 ddp-rate-limiter@1.0.7
 dburles:factory
 aldeed:collection2-core
+deanius:promise

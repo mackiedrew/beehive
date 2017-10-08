@@ -1,10 +1,8 @@
 // @flow
 
 // Framework
+import { Meteor } from "meteor/meteor";
 import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
-
-// Helpers
-import meteorPromise from "../../helpers/meteorPromise";
 
 // Action Types
 import { REMOVE_BEE_REQUEST } from "../../actionTypes/bees";
@@ -18,7 +16,7 @@ import fetchBeesRequest from "../../actionCreators/bees/fetchBeesRequest";
 export function* removeBeeWorker(action: Action) {
   try {
     const callValues = { beeId: action.payload };
-    yield call(meteorPromise, "bees.remove", callValues);
+    yield call(Meteor.callPromise, "bees.remove", callValues);
     yield put(removeBeeSuccessful());
     yield put(fetchBeesRequest());
   } catch ({ message = "No error message specified." }) {

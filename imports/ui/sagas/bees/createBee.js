@@ -1,10 +1,7 @@
 // @flow
-
 // Framework
+import { Meteor } from "meteor/meteor";
 import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
-
-// Helpers
-import meteorPromise from "../../helpers/meteorPromise";
 
 // Action Types
 import { CREATE_BEE_REQUEST } from "../../actionTypes/bees";
@@ -18,7 +15,7 @@ import fetchBeesRequest from "../../actionCreators/bees/fetchBeesRequest";
 export function* createBeeWorker(action: Action) {
   try {
     const callValues = { bee: action.payload };
-    yield call(meteorPromise, "bees.insert", callValues);
+    yield call(Meteor.callPromise, "bees.insert", callValues);
     yield put(createBeeSuccessful());
     yield put(fetchBeesRequest());
   } catch ({ message = "No error message specified." }) {
