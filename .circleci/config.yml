@@ -44,4 +44,5 @@ jobs:
       # run tests!
       - run: yarn test
 
-      - run: ./cc-test-reporter after-build -t lcov --exit-code 0
+      - run: ./cc-test-reporter format-coverage -t lcov .coverage/lcov.info
+      - run: ./cc-test-reporter upload-coverage
