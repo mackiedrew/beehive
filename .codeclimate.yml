@@ -11,4 +11,4 @@ ratings:
   - imports/**
   - server/**
 exclude_paths:
-- "**/tests/**/*"
+  - "**/tests/**/*"
