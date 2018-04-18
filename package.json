@@ -31,7 +31,7 @@
     "redux-saga": "0.15.6",
     "reselect": "3.0.1",
     "simpl-schema": "0.3.2",
-    "underscore": "1.8.3"
+    "underscore": "1.9.0"
   },
   "devDependencies": {
     "autoprefixer": "7.1.2",
