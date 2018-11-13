@@ -21,7 +21,7 @@
     "react": "15.6.1",
     "react-addons-css-transition-group": "15.6.0",
     "react-addons-transition-group": "15.6.0",
-    "react-dom": "16.6.1",
+    "react-dom": "16.6.2",
     "react-redux": "5.0.5",
     "react-router": "^4.2.0",
     "react-router-redux": "^5.0.0-alpha.6",
