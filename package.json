@@ -28,7 +28,7 @@
     "react-transition-group": "1.1.2",
     "reactstrap": "4.8.0",
     "redux": "3.7.2",
-    "redux-saga": "1.0.1",
+    "redux-saga": "1.0.2",
     "reselect": "3.0.1",
     "simpl-schema": "0.3.2",
     "underscore": "1.8.3"
