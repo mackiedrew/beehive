@@ -27,7 +27,7 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "react-transition-group": "1.1.2",
     "reactstrap": "4.8.0",
-    "redux": "3.7.2",
+    "redux": "4.0.1",
     "redux-saga": "0.15.6",
     "reselect": "3.0.1",
     "simpl-schema": "0.3.2",
